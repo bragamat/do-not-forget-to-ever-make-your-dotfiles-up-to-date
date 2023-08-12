@@ -1,15 +1,12 @@
 setopt promptsubst
 
-fpath=(~/.zsh/completion /usr/local/share/zsh/site-functions ${ASDF_DIR}/completions $fpath)
+fpath=(~/.zsh/completion/src ${ASDF_DIR}/completions $fpath)
 
 # completion
 autoload -U compinit
 compinit -u
 
-# load custom executable functions
-for function in ~/.zsh/functions/*; do
-  source $function
-done
+source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # makes color constants available
 autoload -U colors
@@ -49,21 +46,22 @@ bindkey "^Y" accept-and-hold
 bindkey "^N" insert-last-word
 bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 
+bindkey '^ ' autosuggest-execute # ctrl + space to accept the suggestion
+
 set -o nobeep # no annoying beeps
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
 # Zsh syntax highlight
-source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 TERM=screen-256color
 
-# Peepcode theme to make your terminal simple and beautiful
-source ~/.zsh/themes/peepcode.theme
-
-# Your secrets env var
-[[ -f ~/.secrets ]] && source ~/.secrets
-
+plugins=(git)
+ZSH_THEME="dracula"
+# ZSH_THEME="robbyrussell"
+export ZSH="$HOME/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
 setopt interactivecomments
 
 autoload -U +X bashcompinit && bashcompinit

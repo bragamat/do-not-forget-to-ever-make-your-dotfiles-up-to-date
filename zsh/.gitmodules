@@ -1,0 +1,3 @@
+[submodule "ohmyzsh"]
+ path = zsh/.oh-my-zsh
+ url = https://bitbucket.org/jaredw/awesomelibrary
