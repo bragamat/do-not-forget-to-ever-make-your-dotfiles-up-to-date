@@ -1,0 +1,109 @@
+# Based on Skwp's aliases
+# https://raw.githubusercontent.com/skwp/dotfiles/997d36bef991652dd436c076e57d8f00c49f4994/zsh/aliases.zsh
+ccdf=$HOME/.cc_dotfiles
+os_family=`echo $(uname) | tr '[:upper:]' '[:lower:]'`
+
+# PS
+alias psa="ps aux"
+alias psg="ps aux | grep "
+alias psr='ps aux | grep ruby'
+
+# Moving around
+alias cls='clear;ls'
+alias clr='clear'
+alias cl='clear'
+
+# Show human friendly numbers and colors
+alias ls='ls -Gh'
+
+# vim using
+mvim --version > /dev/null 2>&1
+
+# mimic vim functions
+alias :q='exit'
+alias :qa='exit'
+
+# vimrc editing
+alias ve='vim $HOME/.vimrc'
+
+# zsh profile editing
+alias ze='vim $HOME/.zshrc'
+alias zr='source $HOME/.zshrc'
+alias zrl='source $HOME/.zshrc.local'
+
+# history
+alias hfull='history 1 -1'
+
+# Git Aliases
+alias gs='git status'
+alias gi='vim .gitignore'
+alias gcm='git checkout main'
+alias gcmaster='git checkout master'
+alias ga='git add -A'
+alias gra='git rebase --abort'
+alias grc='git rebase --continue'
+alias gri='git rebase --interactive'
+alias glog='git l'
+alias gf='git fetch'
+alias gd='git diff'
+alias gb='git branch'
+alias gpl='git pull'
+alias gplr='git pull --rebase'
+#push current branch
+alias gpso='git push origin/HEAD'
+alias gnb='git nb' # new branch aka checkout -b
+alias gr='git reset'
+# docker-compose
+alias dc="docker-compose"
+alias dcbuild="dc build"
+alias dcps="dc ps"
+alias dcup="dc up"
+
+# workspaces
+### Clearbit
+alias cbt='cd ~/workspace/clearbit'
+alias cbtx='cd ~/workspace/clearbit/clearbit-x/'
+alias cbhub='cd ~/workspace/clearbit/apihub/'
+alias cbdev="cb env --reset dev-eks1"
+alias cbstag="cb env --reset staging-eks1"
+alias cbprod="cb env --reset prod-eks1"
+### Clearbit
+# workspaces
+
+#vim, neovim, lunarvim
+alias nvim='lvim'
+alias vim='lvim'
+alias v='lvim'
+#vim, neovim, lunarvim
+
+# Tools
+### shell
+alias t='tmux'
+### shell
+#
+### clis
+alias k='kubectl'
+### clis
+
+
+if [[ $os_family == 'darwin' ]]
+then
+  # Finder
+  alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+  alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+  # Homebrew
+  alias brewu='brew update && brew upgrade && brew cleanup && brew prune && brew doctor'
+  alias mypubkey="cat $HOME/.ssh/id_rsa.pub | pbcopy"
+fi
+
+if [[ $os_family == 'linux' ]]
+then
+  alias ll='ls -lh --color=auto'
+  alias ls='ls --color=auto'
+  alias mypubkey="cat $HOME/.ssh/id_rsa.pub | xclip -i -selection clipboard"
+fi
+
+# your aliases
+# [[ -f $HOME/.aliases.local ]] && source $HOME/.aliases.local
+
+# vim: ft=zsh
