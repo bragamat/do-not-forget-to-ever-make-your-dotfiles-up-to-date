@@ -1,6 +1,6 @@
 # Based on Skwp's aliases
 # https://raw.githubusercontent.com/skwp/dotfiles/997d36bef991652dd436c076e57d8f00c49f4994/zsh/aliases.zsh
-ccdf=$HOME/.cc_dotfiles
+dotfiles=$HOME/dotfiles
 os_family=`echo $(uname) | tr '[:upper:]' '[:lower:]'`
 
 # PS
@@ -10,8 +10,6 @@ alias psr='ps aux | grep ruby'
 
 # Moving around
 alias cls='clear;ls'
-alias clr='clear'
-alias cl='clear'
 
 # Show human friendly numbers and colors
 alias ls='ls -Gh'
@@ -63,7 +61,7 @@ alias dcup="dc up"
 ### Clearbit
 alias cbt='cd ~/workspace/clearbit'
 alias cbtx='cd ~/workspace/clearbit/clearbit-x/'
-alias cbhub='cd ~/workspace/clearbit/apihub/'
+alias cbthub='cd ~/workspace/clearbit/apihub/'
 alias cbdev="cb env --reset dev-eks1"
 alias cbstag="cb env --reset staging-eks1"
 alias cbprod="cb env --reset prod-eks1"
