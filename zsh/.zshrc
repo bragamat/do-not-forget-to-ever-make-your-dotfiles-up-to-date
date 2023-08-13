@@ -7,6 +7,7 @@ autoload -U compinit
 compinit -u
 
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # makes color constants available
 autoload -U colors
