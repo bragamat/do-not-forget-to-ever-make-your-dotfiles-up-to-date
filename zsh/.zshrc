@@ -1,6 +1,6 @@
 setopt promptsubst
 
-fpath=(~/.zsh/completion/src ${ASDF_DIR}/completions $fpath)
+fpath=(~/.zsh/completion ${ASDF_DIR}/completions $fpath)
 
 # completion
 autoload -U compinit
@@ -64,6 +64,7 @@ ZSH_THEME="dracula"
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 setopt interactivecomments
+source ~/.zsh/themes/peepcode.theme
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
