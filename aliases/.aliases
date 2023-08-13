@@ -48,7 +48,7 @@ alias gb='git branch'
 alias gpl='git pull'
 alias gplr='git pull --rebase'
 #push current branch
-alias gpso='git push origin/HEAD'
+alias gpso='git push origin HEAD'
 alias gnb='git nb' # new branch aka checkout -b
 alias gr='git reset'
 # docker-compose
