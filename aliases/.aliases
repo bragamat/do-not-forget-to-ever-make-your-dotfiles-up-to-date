@@ -82,6 +82,7 @@ alias v='lvim'
 # Tools
 ### shell
 alias t='tmux'
+alias tx='tmuxinator'
 ### shell
 #
 ### clis
