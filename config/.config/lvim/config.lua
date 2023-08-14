@@ -46,6 +46,7 @@ vim.keymap.set("n", "vv", "<C-w>v<CR>")
 vim.keymap.set("n", "ss", "<C-w>s<CR>")
 vim.keymap.set("n", "<Leader><Leader>", "<c-^>")
 vim.keymap.set("n", "<leader>//", ":nohlsearch<CR>")
+vim.keymap.set('n', '<C-p>', ':Telescope find_files<CR>')
 
 vim.wo.colorcolumn     = "80"
 vim.wo.wrap            = true
